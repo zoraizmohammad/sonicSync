@@ -19,18 +19,24 @@ void loop() {
   if (SerialBT.available()) {
     int toneHz  = SerialBT.read();
   }
-  tone(SpeakerJack, toneHz, length(toneHz))
+  tone(SpeakerJack, toneHz, length(toneHzs))
 // write val to audio jack then to speaker 
 // -------------------------------------------------------------------
 // reading voltage vals and then sending back 
   sensorValue = analogRead(sensorPin);
   confirm = analogRead(sensorPin1)
 
-  if(sensorValue == 0){
-    blueVal += 'b';
+  while(blueVal != 'c'){
+    if(sensorValue == 0){
+      blueVal += 'b';
+    }
+    if(confirm == 0){
+      blueVal += 'c';
+    }
+    count++;
   }
-  if(confirm == 0){
-    blueVal += 'c';
-  }
+
+  
+
   delay(500);
 }
