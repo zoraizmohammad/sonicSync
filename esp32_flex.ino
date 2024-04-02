@@ -5,7 +5,7 @@ int sensorValue;  // select the input pin for the potentiometer
 int confirmValue;
 int count = 0;
 char bluVal;
-int tone 
+int toneHz; 
 void setup() {
   // declare the ledPin as an OUTPUT:
   Serial.begin(9600);
@@ -17,7 +17,7 @@ void loop() {
 // within specific time created by piecewise func 
   // write signal to audio jack back into speaker 
   if (SerialBT.available()) {
-    int toneHz  = SerialBT.read();
+    toneHz  = SerialBT.read();
   }
   tone(SpeakerJack, toneHz, length(toneHzs))
 // write val to audio jack then to speaker 
@@ -26,9 +26,10 @@ void loop() {
   sensorValue = analogRead(sensorPin);
   confirm = analogRead(sensorPin1)
 
-  while(confirm != 0){
+  if(confirm != 0){
     if(sensorValue == 0){
           count++;
+          count = count % 5;
     }
   }
   delay(500);
