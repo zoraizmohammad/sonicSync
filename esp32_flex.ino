@@ -26,17 +26,10 @@ void loop() {
   sensorValue = analogRead(sensorPin);
   confirm = analogRead(sensorPin1)
 
-  while(blueVal != 'c'){
+  while(confirm != 0){
     if(sensorValue == 0){
-      blueVal += 'b';
+          count++;
     }
-    if(confirm == 0){
-      blueVal += 'c';
-    }
-    count++;
   }
-
-  
-
   delay(500);
 }
