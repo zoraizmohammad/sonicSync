@@ -90,5 +90,7 @@ void loop() {
     Serial.print("Disconnected from central: ");
     Serial.println(central.address());
     //buttonState.writeValue(20);
- }
+ } else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
 }
