@@ -10,7 +10,7 @@ int SpeakerJack = TX;
 
 BLEService speakService("ee4130ab-85ef-4603-acb4-a2e694ceefcd");
 BLEIntCharacteristic countState("d06bfecd-8a97-44a1-b761-f3c5228c7bba", BLERead | BLEWrite | BLENotify);
-BLEIntCharacteristic confirmState("d06bfecd-8a97-44a1-b761-f3c5228c7bba", BLERead | BLEWrite | BLENotify);
+BLEIntCharacteristic confirmState("d06bfecd-8a97-44a1-b761-f3c5228c7aab", BLERead | BLEWrite | BLENotify);
 
 
 // Bluetooth® Low Energy Battery Level Characteristic
