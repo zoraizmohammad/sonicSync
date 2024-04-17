@@ -75,6 +75,7 @@ void loop() {
           if(sensorValue == 0){
             countState.setValue((countState.value()+1)%5);
             Serial.println(countState.value());
+            Serial.println(confirmState.value());
           }
         }
         else{
@@ -83,7 +84,6 @@ void loop() {
           Serial.println(confirmState.value());
           // make confirm
           } 
-        confirmState.setValue(0);
     }
     // when the central disconnects, turn off the LED:
     digitalWrite(LED_BUILTIN, LOW);
