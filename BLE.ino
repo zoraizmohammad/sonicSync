@@ -38,7 +38,7 @@ void setup() {
   */
   speakService.addCharacteristic(countState);
   speakService.addCharacteristic(confirmState);
-  BLE.setLocalName("ButtonMonitor");
+  BLE.setLocalName("Arduino");
   BLE.setAdvertisedService(speakService); // add the service UUID
   BLE.setAdvertisedServiceUuid("fd654490-aba5-40eb-b784-23a166312bd6");
   BLE.addService(speakService); // Add the battery service
@@ -75,7 +75,6 @@ void loop() {
           if(sensorValue == 0){
             countState.setValue((countState.value()+1)%5);
             Serial.println(countState.value());
-            Serial.println(confirmState.value());
           }
         }
         else{
@@ -84,6 +83,7 @@ void loop() {
           Serial.println(confirmState.value());
           // make confirm
           } 
+        confirmState.setValue(0);
     }
     // when the central disconnects, turn off the LED:
     digitalWrite(LED_BUILTIN, LOW);
