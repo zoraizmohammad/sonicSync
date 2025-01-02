@@ -5,4 +5,4 @@ _SonicSync_ is a submersible wearable apparatus created in collaboration with **
 
 _SonicSync_ is a system with 98% accuracy in receiving specific diver feedback. To streamline communication between the device and a laptop, a tailored diver protocol leverages an optimized Bluetooth buoy, targeting a low latency bi-directional data transfer.
 
-The confrence paper detailing the findings the device can be found [here](https://ieeexplore.ieee.org/document/10534714).
+The confrence paper detailing the findings of the device can be found [here](https://ieeexplore.ieee.org/document/10534714).
